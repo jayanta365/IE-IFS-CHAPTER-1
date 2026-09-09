@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JAIIB PREP — Indian Economy MCQ Practice</title>
+<style>
+:root{
+  --bg:#0d1117;--panel:#161b22;--panel2:#1c2128;--border:#30363d;
+  --text:#e6edf3;--muted:#8b949e;--blue:#58a6ff;--green:#3fb950;
+  --red:#f85149;--gold:#d29922;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:14px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+.top{height:64px;border-bottom:1px solid var(--border);background:#010409;display:flex;align-items:center;padding:0 24px;position:sticky;top:0;z-index:10}
+.logo{width:34px;height:34px;border-radius:50%;background:#f0f6fc;color:#0d1117;display:grid;place-items:center;font-weight:900;font-size:19px;margin-right:12px}
+.brand{font-weight:650;font-size:16px}.brand span{color:var(--muted);font-weight:400}
+.topstats{margin-left:auto;display:flex;gap:9px;align-items:center}
+.badge{border:1px solid var(--border);background:#161b22;padding:6px 10px;border-radius:8px;color:var(--muted);font-size:12px}
+.layout{max-width:1180px;margin:auto;display:grid;grid-template-columns:230px minmax(0,1fr);min-height:calc(100vh - 64px)}
+.sidebar{border-right:1px solid var(--border);padding:22px 14px;position:sticky;top:64px;height:calc(100vh - 64px);overflow:auto}
+.sidebar h3{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin:0 10px 12px}
+.qgrid{display:grid;grid-template-columns:repeat(5,1fr);gap:5px}
+.qbtn{height:32px;border:1px solid var(--border);background:#161b22;color:var(--muted);border-radius:6px;cursor:pointer;font-size:11px}
+.qbtn:hover{border-color:var(--blue);color:var(--text)}
+.qbtn.current{border-color:var(--blue);color:var(--blue);box-shadow:inset 0 0 0 1px var(--blue)}
+.qbtn.correct{background:rgba(63,185,80,.13);border-color:rgba(63,185,80,.55);color:#7ee787}
+.qbtn.wrong{background:rgba(248,81,73,.13);border-color:rgba(248,81,73,.55);color:#ff7b72}
+.main{padding:34px 32px 60px;max-width:850px;width:100%;margin:auto}
+.progressbar{height:6px;background:#21262d;border-radius:99px;overflow:hidden;margin-bottom:26px}
+.progress{height:100%;background:var(--blue);width:0;transition:.25s}
+.meta{display:flex;justify-content:space-between;color:var(--muted);font-size:12px;margin-bottom:9px}
+.card{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:28px;box-shadow:0 8px 28px rgba(0,0,0,.18)}
+.question{font-size:21px;line-height:1.42;font-weight:600;margin:6px 0 24px}
+.option{width:100%;text-align:left;border:1px solid var(--border);background:var(--panel2);color:var(--text);border-radius:9px;padding:14px 16px;margin:9px 0;cursor:pointer;display:flex;gap:13px;transition:.14s;font-size:14px}
+.option:hover:not(:disabled){border-color:#58a6ff;background:#21262d}
+.option .letter{color:var(--blue);font-weight:800;min-width:21px}
+.option.correct{border-color:var(--green);background:rgba(63,185,80,.12)}
+.option.wrong{border-color:var(--red);background:rgba(248,81,73,.12)}
+.option:disabled{cursor:default}
+.feedback{display:none;border-radius:8px;padding:12px 14px;margin-top:15px;font-weight:650}
+.feedback.show{display:block}.feedback.good{color:#7ee787;background:rgba(63,185,80,.1);border:1px solid rgba(63,185,80,.35)}
+.feedback.bad{color:#ff7b72;background:rgba(248,81,73,.1);border:1px solid rgba(248,81,73,.35)}
+.explain{display:block;color:var(--muted);font-weight:400;font-size:12px;margin-top:4px}
+.controls{display:flex;justify-content:space-between;margin-top:18px}
+button.ctrl{border:1px solid var(--border);background:#21262d;color:var(--text);padding:9px 15px;border-radius:7px;cursor:pointer;font-weight:600}
+button.ctrl:hover{border-color:var(--blue)}button.ctrl:disabled{opacity:.4;cursor:not-allowed}
+.result{display:none;text-align:center}
+.result h1{font-size:30px;margin:6px 0}.bigscore{font-size:64px;font-weight:800;color:var(--blue);margin:10px 0}
+.result p{color:var(--muted)}
+.restart{background:var(--blue)!important;color:#07101a!important;border-color:var(--blue)!important}
+@media(max-width:760px){
+ .layout{display:block}.sidebar{display:none}.main{padding:20px 14px 50px}
+ .top{padding:0 14px}.topstats .hide-mobile{display:none}.card{padding:20px}
+ .question{font-size:18px}
+}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="logo">J</div>
+  <div class="brand">JAIIB PREP <span>/ Indian Economy MCQ Practice</span></div>
+  <div class="topstats">
+    <div class="badge">120 Questions</div>
+    <div class="badge">Score: <b id="score">0</b></div>
+    <div class="badge hide-mobile">Answered: <b id="answered">0</b></div>
+  </div>
+</header>
+
+<div class="layout">
+<aside class="sidebar">
+  <h3>Question Navigator</h3>
+  <div class="qgrid" id="qgrid"></div>
+</aside>
+
+<main class="main">
+  <div class="meta"><span id="position">Question 1 of 120</span><span id="percent">0% complete</span></div>
+  <div class="progressbar"><div class="progress" id="progress"></div></div>
+
+  <section class="card" id="quiz">
+    <div class="question" id="question"></div>
+    <div id="options"></div>
+    <div class="feedback" id="feedback"></div>
+    <div class="controls">
+      <button class="ctrl" id="prev">← Previous</button>
+      <button class="ctrl" id="next">Next →</button>
+    </div>
+  </section>
+
+  <section class="card result" id="result">
+    <div style="color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.08em">Quiz Complete</div>
+    <h1>Excellent. You finished the set.</h1>
+    <div class="bigscore" id="finalScore">0 / 120</div>
+    <p id="finalText"></p>
+    <button class="ctrl restart" id="restart">Restart Quiz</button>
+  </section>
+</main>
+</div>
+
+<script>
+const questions = [{"q": "According to the Angus Maddison database cited for historical global GDP, what percentage of global GDP was contributed jointly by India and China in 1000 AD?", "o": ["50.5%", "33%", "42%", "52%"], "a": 0}, {"q": "In 1600 AD, what was India's share of global GDP according to the historical estimates cited?", "o": ["16.1%", "23%", "24.4%", "29%"], "a": 1}, {"q": "India's share of global income declined from approximately 23% in 1600 to what level by 1947?", "o": ["10%", "7.3%", "5%", "3%"], "a": 3}, {"q": "According to the cited IMF information, India's contribution to global GDP reached what percentage in 2021?", "o": ["5.3%", "3.7%", "7.3%", "10.3%"], "a": 2}, {"q": "In terms of GDP measured at purchasing power parity, India was ranked at which position in the world in the source period?", "o": ["Third", "First", "Second", "Fourth"], "a": 0}, {"q": "Which is the correct sequence of World Bank income classifications based on per-capita income?", "o": ["Low, Middle, Upper Middle, High", "Lower, Low Middle, High Middle, High", "Low, Lower Middle, Upper Middle, High", "Low, Lower High, Upper High, High"], "a": 2}, {"q": "According to the source, India's 2019 per-capita income was approximately:", "o": ["US$996", "US$1,891", "US$3,895", "US$7,300"], "a": 1}, {"q": "Which combination best explains the low per-capita income associated with India's economic condition in the source?", "o": ["High exports, low savings and high investment", "High productivity, low population and high literacy", "High industrialisation, inflation and exports", "Poverty, unemployment and illiteracy"], "a": 3}, {"q": "Which factor was identified as influencing the nature and characteristics of the Indian economy?", "o": ["Very low population growth", "Excessive reliance on the primary sector", "Complete elimination of disguised unemployment", "Exclusive dependence on the tertiary sector"], "a": 1}, {"q": "Which type of unemployment occurs when more workers are engaged in an activity than are actually required, so removing some workers does not materially reduce output?", "o": ["Disguised unemployment", "Structural unemployment", "Seasonal unemployment", "Frictional unemployment"], "a": 0}, {"q": "The macro-economic aggregate table cited in the source uses which base year?", "o": ["2004–05", "2010–11", "2011–12", "2015–16"], "a": 2}, {"q": "The 2020–21 population figure in the macro-economic table was approximately how many lakhs?", "o": ["13,410", "13,270", "12,670", "13,554"], "a": 3}, {"q": "According to the macro-economic table, India's per-capita GDP in 2020–21 was approximately:", "o": ["₹145,680", "₹128,829", "₹144,320", "₹148,504"], "a": 0}, {"q": "Which national-income aggregate is obtained after deducting consumption of fixed capital from GDP?", "o": ["Gross National Income", "Gross National Disposable Income", "Net National Income", "Net Domestic Product"], "a": 3}, {"q": "Which national-income aggregate is obtained by adding net primary income from the rest of the world to GDP?", "o": ["NDP", "GNI", "NNI", "GNDI"], "a": 1}, {"q": "The 2020–21 data in the macro-economic table were classified as:", "o": ["Final Estimates", "First Revised Estimates", "Provisional Estimates", "Second Revised Estimates"], "a": 2}, {"q": "Which sector accounted for 53.1% of India's GDP in 1950?", "o": ["Industry", "Services", "Manufacturing", "Agriculture"], "a": 3}, {"q": "What were the respective shares of agriculture, industry and services in India's GDP in 1950?", "o": ["53.1%, 16.6%, 30.3%", "50.3%, 16.1%, 33.6%", "36.1%, 25.9%, 38.0%", "30.3%, 16.6%, 53.1%"], "a": 0}, {"q": "Which sector became the largest contributor to India's GDP in 1980–81 according to the source?", "o": ["Agriculture", "Services", "Industry", "Mining"], "a": 1}, {"q": "What was the share of services in India's GDP in 1980–81 according to the source?", "o": ["30.3%", "36.1%", "38%", "40.5%"], "a": 2}, {"q": "Who published the first estimates of India's national income for 1867–68 in Poverty and Un-British Rule in India?", "o": ["Dadabhai Naoroji", "R.C. Dutt", "Angus Maddison", "William Digby"], "a": 0}, {"q": "What national income did Dadabhai Naoroji estimate for British India for 1867–68?", "o": ["₹250 crore", "₹142 crore", "₹500 crore", "₹340 crore"], "a": 3}, {"q": "What per-capita income did Dadabhai Naoroji estimate for India for 1867–68 at current prices?", "o": ["₹50 per annum", "₹20 per annum", "₹142 per annum", "₹250 per annum"], "a": 1}, {"q": "In 1948–49 prices, what per-capita income did Naoroji's ₹20 current-price estimate work out to?", "o": ["₹102", "₹120", "₹142", "₹172"], "a": 2}, {"q": "Which economist estimated India's per-capita income at ₹172 in 1948–49 prices for 1875?", "o": ["Horne", "Curzon", "Findlay Shirras", "Atkinson"], "a": 3}, {"q": "According to the source, India's share of global trade declined from 33% in 1600 to approximately what level in 1947?", "o": ["Less than 3%", "15%", "10%", "5%"], "a": 0}, {"q": "Which statement best describes India's economic condition during the pre-independence period?", "o": ["Rapid industrialisation and rising productivity", "Near-stagnation with little change in production organisation or productivity", "Rapid growth driven by domestic capital formation", "Complete transition to a service-based economy"], "a": 1}, {"q": "Which organisation is identified as having ignored industrialisation in India while developing infrastructure largely to exploit Indian raw materials?", "o": ["Reserve Bank of India", "British Crown", "East India Company", "World Bank"], "a": 2}, {"q": "Which event marked the beginning of the second phase of British colonial impact described in the source?", "o": ["Battle of Plassey", "Formation of the East India Company", "Sepoy Mutiny", "Transfer of power in 1947"], "a": 0}, {"q": "The British Crown assumed exclusive control over India after the:", "o": ["Battle of Plassey", "Sepoy Mutiny of 1857", "Charter Act of 1813", "Battle of Buxar"], "a": 1}, {"q": "Which correctly represents the three phases of British economic impact described in the source?", "o": ["1600–1700, 1700–1800, 1800 onward", "1757–1857, 1857–1947, 1947 onward", "1600–1757, 1757–1857, 1858 onward", "1600–1857, 1857–1900, 1900 onward"], "a": 2}, {"q": "Which combination represents the land-revenue systems introduced under British rule?", "o": ["Jagirdari, Iqtadari and Zamindari", "Ryotwari, Mansabdari and Mahalwari", "Mahalwari, Permanent Banking and Ryotwari", "Zamindari, Mahalwari and Ryotwari"], "a": 3}, {"q": "What was one major economic consequence of the commercialisation of Indian agriculture under British rule?", "o": ["Creation of intermediaries and increased famine frequency", "Elimination of intermediaries", "Reduction in famine frequency", "Complete abolition of landless labour"], "a": 0}, {"q": "The process of deindustrialisation in India, according to the source, began mainly during the:", "o": ["Early eighteenth century", "Mid-nineteenth century", "Early twentieth century", "Post-independence period"], "a": 1}, {"q": "Which factor contributed to India's deindustrialisation during British rule?", "o": ["Greater competitiveness of Indian textiles", "Reduction in transportation facilities", "Unfavourable trade policy toward India", "Rapid expansion of domestic purchasing power"], "a": 2}, {"q": "What was a major economic purpose attributed to British railway development in India?", "o": ["Promoting balanced regional development", "Eliminating exports from India", "Increasing agricultural wages", "Moving commodities between hinterlands and ports and facilitating profitable investment"], "a": 3}, {"q": "According to the source, the introduction of Western education in colonial India was intended primarily to:", "o": ["Create a group sufficiently Westernised to become estranged from its own culture", "Preserve traditional Indian culture", "Eliminate English education", "Promote universal higher education"], "a": 0}, {"q": "What is meant by the wealth drain from India during British rule?", "o": ["Movement of Indian savings into domestic industries", "Unilateral transfer of wealth from India to Britain without sufficient economic return", "Transfer of British investment into Indian agriculture", "Transfer of Indian exports to neighbouring countries"], "a": 1}, {"q": "Which was one channel of the wealth drain from India to Britain?", "o": ["Agricultural subsidies", "Domestic savings certificates", "Home Charges", "Priority-sector lending"], "a": 2}, {"q": "Who classified the economic drain from India into four broad streams in 1776?", "o": ["Edmund Burke", "Dadabhai Naoroji", "R.C. Dutt", "Philip Francis"], "a": 3}, {"q": "Which was NOT one of the four broad streams of the economic drain identified by Philip Francis?", "o": ["Government expenditure on Indian rural development", "East India Company investment", "Remittances to another presidency", "Transfer of private income"], "a": 0}, {"q": "During direct British control from 1858 to 1947, official transfers of money from India to the United Kingdom were known as:", "o": ["Drain Charges", "Home Charges", "Imperial Levies", "Crown Tax"], "a": 1}, {"q": "Which was included within Home Charges?", "o": ["Indian agricultural subsidies", "Domestic bank deposits", "Dividends to East India Company shareholders", "Indian export incentives"], "a": 2}, {"q": "According to the comparative data, India's per-capita GDP in 1600 was approximately:", "o": ["$450", "$618", "$974", "$550"], "a": 3}, {"q": "India's per-capita income increased by approximately what percentage between 1600 and 1947 according to the comparative analysis?", "o": ["12%", "52%", "153%", "553%"], "a": 0}, {"q": "Britain's per-capita income increased by approximately what percentage between 1600 and 1947 according to the comparative analysis?", "o": ["12%", "553%", "52%", "244%"], "a": 1}, {"q": "India's total GDP increased by approximately how many times between 1600 and 1947 according to the comparative table?", "o": ["1.24 times", "5.2 times", "2.44 times", "52 times"], "a": 2}, {"q": "What term did Raj Krishna coin in 1978 to describe India's low economic growth during the early post-independence decades?", "o": ["Poverty Trap", "Licence Rate of Growth", "Indian Growth Paradox", "Hindu Rate of Growth"], "a": 3}, {"q": "The Hindu Rate of Growth referred approximately to an annual economic growth rate of:", "o": ["3.5%", "1.3%", "2.5%", "6.5%"], "a": 0}, {"q": "What was the approximate average per-capita income growth rate during the period associated with the Hindu Rate of Growth?", "o": ["3.5%", "1.3%", "5.3%", "6.7%"], "a": 1}, {"q": "Which Five-Year Plan period is associated with breaking the Hindu Rate of Growth?", "o": ["First Five-Year Plan", "Fourth Five-Year Plan", "Sixth Five-Year Plan", "Eighth Five-Year Plan"], "a": 2}, {"q": "Which policy development is most closely associated with India's post-1991 economic transformation?", "o": ["Complete nationalisation", "Restriction of foreign capital", "Elimination of private enterprise", "Liberalisation, Privatisation and Globalisation"], "a": 3}, {"q": "What was India's GDP growth rate during the Eighth Five-Year Plan, 1992–1997?", "o": ["6.7%", "5.3%", "7.6%", "8.6%"], "a": 0}, {"q": "What was India's GDP growth rate during the Ninth Five-Year Plan, 1997–2002?", "o": ["4.0%", "5.3%", "6.7%", "7.6%"], "a": 1}, {"q": "What was India's GDP growth rate during the Tenth Five-Year Plan, 2002–2007?", "o": ["5.3%", "6.7%", "7.6%", "8.9%"], "a": 2}, {"q": "The high growth during the Eighth Five-Year Plan was attributed mainly to:", "o": ["Declining foreign capital inflows", "Complete closure of imports", "Declining government expenditure", "Increased foreign capital inflows following the 1991 economic policy"], "a": 3}, {"q": "The Lehman Brothers collapse referred to in the source occurred on:", "o": ["15 September 2008", "11 March 2009", "30 January 2008", "16 September 2010"], "a": 0}, {"q": "What was the approximate value of the three fiscal stimulus packages provided by the Indian government after the 2008 global financial crisis?", "o": ["₹86,000 crore", "₹5.6 lakh crore", "₹1.86 lakh crore", "₹9 lakh crore"], "a": 2}, {"q": "The three fiscal stimulus packages after the 2008 crisis were approximately what percentage of GDP?", "o": ["1.5%", "3.5%", "5.6%", "9%"], "a": 1}, {"q": "Approximately how much liquidity did the RBI inject following the 2008 global financial crisis according to the source?", "o": ["₹1.86 lakh crore", "₹3.5 lakh crore", "₹9.0 lakh crore", "₹5.6 lakh crore"], "a": 3}, {"q": "Which was among the major policy measures implemented in India during the post-2008 period?", "o": ["Abolition of all corporate taxes", "GST", "Abolition of bankruptcy legislation", "Complete reversal of globalisation"], "a": 1}, {"q": "India's GDP growth rate in 2019–20 was approximately:", "o": ["4.0%", "5.5%", "6.5%", "8.7%"], "a": 0}, {"q": "Which three events are identified as major economic shocks faced by India over the four decades before the source's discussion of COVID-19?", "o": ["1980 oil crisis, 1998 Asian crisis and 2016 demonetisation", "1971 war, 1984 crisis and 2001 recession", "1997 Asian crisis, 2013 taper tantrum and GST", "1991 BoP crisis, 2008 global financial crisis and COVID-19 pandemic"], "a": 3}, {"q": "On what date did the World Health Organization declare COVID-19 a pandemic?", "o": ["30 January 2020", "16 September 2020", "11 March 2020", "16 January 2021"], "a": 2}, {"q": "When was the first COVID-19 case in India reported according to the source?", "o": ["30 January 2020", "11 March 2020", "16 September 2020", "16 January 2021"], "a": 0}, {"q": "India's COVID-19 vaccination programme was launched on:", "o": ["30 January 2020", "11 March 2020", "16 January 2021", "16 September 2020"], "a": 2}, {"q": "Which sector remained relatively resilient during India's COVID-19 lockdown because agriculture and allied activities were largely spared from restrictions?", "o": ["Mining", "Agriculture", "Construction", "Retail trade"], "a": 1}, {"q": "Which category of economic activity was among the most severely affected by COVID-19 restrictions?", "o": ["Agriculture and allied activities", "Essential food production", "Government administration", "Contact-intensive services"], "a": 3}, {"q": "Which was specifically identified as a contact-intensive service affected by the pandemic?", "o": ["Crop cultivation", "Retail trading", "Coal mining", "Irrigation"], "a": 1}, {"q": "What happened to India's labour market during the first COVID-19 wave?", "o": ["Unemployment reached an all-time high and labour-force participation declined sharply", "Labour-force participation increased sharply", "Urban employment expanded rapidly", "Reverse migration completely stopped"], "a": 0}, {"q": "Reverse migration from urban to rural areas during the first COVID-19 wave increased demand for employment under:", "o": ["PM-KISAN", "PMAY", "MGNREGS", "Stand-Up India"], "a": 2}, {"q": "Which component of investment demand experienced the most severe contraction during Q1 of 2020–21?", "o": ["Household consumption only", "Agricultural exports", "Government salaries", "Gross fixed capital formation"], "a": 3}, {"q": "Which factor mainly supported the recovery in gross fixed capital formation during 2020–21?", "o": ["Active government investment", "Decline in public investment", "Collapse in infrastructure spending", "Reduction in capital formation"], "a": 0}, {"q": "Which manufacturing-sector pattern was observed during the COVID-19 period?", "o": ["Manufacturing was unaffected throughout the pandemic", "Manufacturing was the most resilient sector from the beginning", "Manufacturing declined only after the third wave", "Manufacturing reached a new low initially but later led recovery following the first wave"], "a": 3}, {"q": "Which sector was classified as Resilient in the sector-wise COVID recovery pattern?", "o": ["Trade, hotel and repair", "Agriculture, forestry and fishing", "Transport and communication", "Other services"], "a": 1}, {"q": "What was the pandemic-period growth rate of agriculture, forestry and fishing in 2020–21?", "o": ["–8.6%", "–3.6%", "3.3%", "6.7%"], "a": 2}, {"q": "What was the 2020–21 pandemic-period growth rate of manufacturing?", "o": ["–3.6%", "–7.3%", "–22.4%", "–0.6%"], "a": 3}, {"q": "Which sector recorded a pandemic-period contraction of approximately 22.4% in 2020–21?", "o": ["Trade, hotel and repair", "Construction", "Manufacturing", "Agriculture"], "a": 0}, {"q": "Which category recorded a pandemic-period contraction of approximately 15.3% in 2020–21?", "o": ["Financial services", "Transport, communication and broadcasting-related services", "Agriculture", "Public administration and defence"], "a": 1}, {"q": "Which sector recorded a pandemic-period growth rate of 5.1% in the sector-wise recovery table?", "o": ["Agriculture", "Manufacturing", "Financial services", "Construction"], "a": 2}, {"q": "What was the contraction in GVA at basic prices during 2020–21 according to the sector-wise recovery table?", "o": ["–4.8%", "–3.1%", "–6.6%", "–7.3%"], "a": 0}, {"q": "Which group of services recovered gradually and remained comparatively weaker after the pandemic shock?", "o": ["Financial and professional services", "Public administration and defence", "Agriculture and allied services", "Trade, hotels, transport, communication and broadcasting-related services"], "a": 3}, {"q": "By how much did India's GDP contract in Q1 of 2020–21 according to the source?", "o": ["6.6%", "23.8%", "8.7%", "20.1%"], "a": 1}, {"q": "What was the overall contraction in India's GDP during 2020–21?", "o": ["4.0%", "8.7%", "6.6%", "23.8%"], "a": 2}, {"q": "Which quarterly GDP growth figures are given for Q3 and Q4 of 2020–21?", "o": ["Q3 8.7%, Q4 6.6%", "Q3 2.5%, Q4 –6.6%", "Q3 4.1%, Q4 5.4%", "Q3 0.7%, Q4 2.5%"], "a": 3}, {"q": "What was the provisional estimate of India's real GDP at constant 2011–12 prices in 2021–22?", "o": ["₹147.36 lakh crore", "₹198.01 lakh crore", "₹236.65 lakh crore", "₹255.85 lakh crore"], "a": 0}, {"q": "According to the provisional estimate cited in the source, India's GDP growth in 2021–22 was:", "o": ["6.6%", "8.7%", "7.5%", "8.9%"], "a": 1}, {"q": "Which quarterly GDP growth sequence correctly represents India's 2021–22 quarterly growth rates?", "o": ["8.4%, 20.1%, 4.1%, 5.4%", "23.8%, 0.7%, 2.5%, 6.6%", "20.1%, 8.4%, 5.4%, 4.1%", "8.7%, 7.5%, 6.6%, 4.0%"], "a": 2}, {"q": "India's nominal GDP at current prices in 2021–22 was estimated at approximately:", "o": ["₹236.65 lakh crore", "₹147.36 lakh crore", "₹198.01 lakh crore", "₹255.85 lakh crore"], "a": 0}, {"q": "India's nominal GDP growth rate in 2021–22 was approximately:", "o": ["8.7%", "19.5%", "20.1%", "23.8%"], "a": 1}, {"q": "What was the pre-COVID trend growth rate of India's GDP from 2012–13 to 2019–20 according to the source?", "o": ["3.5%", "5.3%", "6.6%", "8.7%"], "a": 2}, {"q": "According to the RBI staff projection cited in the source, India was expected to overcome COVID-related GDP losses by:", "o": ["2025–26", "2030–31", "2040–41", "2034–35"], "a": 3}, {"q": "Structural change in an economy refers to:", "o": ["Fundamental changes in critical components of the economy over time", "A temporary change in inflation", "A change only in foreign exchange rates", "A temporary decline in GDP"], "a": 0}, {"q": "Which long-term structural pattern is associated with economic development in India?", "o": ["Rising agricultural dominance and declining services", "Declining primary-sector contribution and increasing secondary and tertiary contribution", "Declining tertiary sector and increasing agriculture", "Permanent dominance of the primary sector"], "a": 1}, {"q": "India's agriculture share of GDP declined from approximately 26.9% in 1990 to what level in 2019?", "o": ["21.6%", "20.1%", "17.7%", "15.3%"], "a": 2}, {"q": "What was the share of services in India's economy in 2020–21 according to the source?", "o": ["19.8%", "20.1%", "59.0%", "60.9%"], "a": 3}, {"q": "What were the respective contributions of the secondary and primary sectors to India's economy in 2020–21?", "o": ["19.8% and 20.1%", "20.1% and 19.8%", "60.9% and 19.8%", "17.7% and 21.6%"], "a": 0}, {"q": "Why did the relative contribution of agriculture increase during the COVID-19 lockdown?", "o": ["Agriculture received no demand", "Agriculture and allied activities were allowed to function relatively smoothly", "Manufacturing completely stopped permanently", "Services were completely abolished"], "a": 1}, {"q": "Which sector has largely replaced the industrial sector as the dominant contributor to India's economy over the long term?", "o": ["Primary sector", "Agricultural sector", "Services sector", "Mining sector"], "a": 2}, {"q": "Which external factor is specifically identified as influencing the growth and dominance of India's services sector?", "o": ["Land revenue", "Zamindari", "Home Charges", "Foreign direct investment"], "a": 3}, {"q": "Which historical event is most directly associated with the beginning of the second phase of British colonial control in India?", "o": ["Battle of Plassey", "Establishment of the East India Company in 1600", "Sepoy Mutiny", "Independence in 1947"], "a": 0}, {"q": "Which best captures the economic consequence of British colonial policy described in the source?", "o": ["India's global income and trade shares increased substantially", "India experienced wealth drain, deindustrialisation and declining global economic importance", "India experienced rapid productivity-led industrialisation", "India became a high-income economy"], "a": 1}, {"q": "Which economist is associated with the historical estimates showing India's global income share falling sharply between 1600 and 1947?", "o": ["Raj Krishna", "John Maynard Keynes", "Angus Maddison", "Amartya Sen"], "a": 2}, {"q": "Which statement correctly matches the person with the contribution?", "o": ["Dadabhai Naoroji — coined Hindu Rate of Growth", "Philip Francis — introduced GST", "Angus Maddison — introduced the Zamindari system", "Raj Krishna — coined Hindu Rate of Growth"], "a": 3}, {"q": "Which policy combination was adopted after the 1991 economic crisis to promote greater integration and market-oriented reform?", "o": ["Liberalisation, Privatisation and Globalisation", "Nationalisation, Protectionism and Import Substitution only", "Zamindari, Ryotwari and Mahalwari", "Fiscal consolidation, Home Charges and deindustrialisation"], "a": 0}, {"q": "A country experiences a shift in GDP composition where agriculture's share declines while services' share rises substantially over several decades. This is best described as:", "o": ["Wealth drain", "Structural change", "Disguised unemployment", "Fiscal deficit"], "a": 1}, {"q": "Which pair is correctly matched?", "o": ["Hindu Rate — 1991 LPG reforms", "Wealth Drain — transfer of British wealth to India", "Home Charges — British official transfers from India to the UK", "Deindustrialisation — expansion of Indian textile competitiveness"], "a": 2}, {"q": "Which best explains why GDP growth alone may not reflect a country's relative economic well-being?", "o": ["GDP is always lower than per-capita income", "GDP excludes all services", "Per-capita income measures only exports", "A country can have a large total GDP but a relatively low per-capita income because of its population size"], "a": 3}, {"q": "If an economy moves from agriculture-dominated production toward services-dominated production over time, which broad transformation is being observed?", "o": ["Sectoral structural transformation", "Monetary contraction", "Balance-of-payments crisis", "Wealth drain"], "a": 0}, {"q": "Which statement best distinguishes GDP measured at PPP from per-capita income?", "o": ["PPP measures population while per-capita income measures exports", "PPP adjusts economic comparison for purchasing power, while per-capita income relates income to population", "PPP and per-capita income are identical measures", "Per-capita income is calculated only for developed economies"], "a": 1}, {"q": "Which best explains why agriculture was comparatively resilient during India's COVID-19 lockdown?", "o": ["Agricultural output depends entirely on imports", "Agriculture is classified as a contact-intensive service", "Agricultural activities were largely exempted from the stringent restrictions affecting many other activities", "Agriculture was shut down earlier than other sectors"], "a": 2}, {"q": "Which sequence correctly represents India's broad economic transformation described in the source?", "o": ["Services → Agriculture → Industry", "Industry dominance → agriculture dominance → services decline", "Services dominance → agriculture dominance → industry decline", "Agriculture dominance → increasing industry/services → services dominance"], "a": 3}, {"q": "Which was NOT a major component of the wealth-drain mechanism described for colonial India?", "o": ["Domestic priority-sector lending", "Remittances", "Home Charges", "Transfer of revenue from private business or investment"], "a": 0}, {"q": "Which statement about India's economy during British rule is most consistent with the source?", "o": ["Infrastructure development was primarily designed for India's balanced industrialisation", "Infrastructure such as railways also served colonial commercial and extraction interests", "Indian agriculture was insulated from British trade policy", "Indian textile competitiveness continuously increased"], "a": 1}, {"q": "Which development best explains the transition from slow growth in the early post-independence period to faster growth after 1991?", "o": ["Introduction of Zamindari", "Expansion of Home Charges", "Decline in foreign capital inflows", "Adoption of LPG reforms following the 1991 economic crisis"], "a": 3}, {"q": "Which sector was described as Still Suffering in the COVID recovery pattern?", "o": ["Agriculture, forestry and fishing", "Financial services", "Trade, hotels, transport, communication and broadcasting-related services", "Public administration and defence"], "a": 2}, {"q": "Which sector recorded the strongest pandemic-period contraction among the listed sectors in the recovery table?", "o": ["Trade, hotel and repair", "Agriculture", "Financial services", "Manufacturing"], "a": 0}, {"q": "Which event caused India's economic activity to weaken again after the recovery momentum of 2021?", "o": ["Battle of Plassey", "1991 BoP crisis", "Russia-Ukraine conflict beginning in March 2022", "Introduction of GST"], "a": 2}, {"q": "Which two supply-side shortages were specifically identified as reducing economic momentum from late 2021?", "o": ["Foodgrain and labour shortages", "Coal and semiconductor chip shortages", "Cotton and steel shortages", "Currency and gold shortages"], "a": 1}, {"q": "Which statement correctly reflects the source's description of India's post-COVID recovery?", "o": ["All sectors recovered uniformly", "Services completely failed to recover", "Construction was unaffected by the pandemic", "Agriculture remained resilient, while recovery in contact-intensive services was more gradual"], "a": 3}];
+const letters = ["A","B","C","D"];
+let current = 0;
+let answers = Array(questions.length).fill(null);
+let score = 0;
+
+const $ = id => document.getElementById(id);
+const qgrid = $("qgrid");
+
+questions.forEach((_,i) => {
+  const b = document.createElement("button");
+  b.className = "qbtn";
+  b.textContent = i+1;
+  b.onclick = () => { current=i; render(); };
+  qgrid.appendChild(b);
+});
+
+function render(){
+  $("quiz").style.display = "block";
+  $("result").style.display = "none";
+  const item = questions[current];
+  $("position").textContent = `Question ${current+1} of ${questions.length}`;
+  $("percent").textContent = `${Math.round((current/questions.length)*100)}% complete`;
+  $("progress").style.width = `${(current/questions.length)*100}%`;
+  $("question").textContent = item.q;
+  const box = $("options");
+  box.innerHTML = "";
+  const selected = answers[current];
+
+  item.o.forEach((opt,i) => {
+    const btn = document.createElement("button");
+    btn.className = "option";
+    btn.innerHTML = `<span class="letter">${letters[i]}.</span><span>${escapeHtml(opt)}</span>`;
+    if(selected !== null){
+      btn.disabled = true;
+      if(i === item.a) btn.classList.add("correct");
+      if(i === selected && selected !== item.a) btn.classList.add("wrong");
+    } else {
+      btn.onclick = () => choose(i);
+    }
+    box.appendChild(btn);
+  });
+
+  const fb = $("feedback");
+  fb.className = "feedback";
+  if(selected !== null){
+    fb.classList.add("show", selected === item.a ? "good" : "bad");
+    fb.innerHTML = selected === item.a
+      ? "✓ Correct!"
+      : `✗ Incorrect. The correct answer is <b>${letters[item.a]}. ${escapeHtml(item.o[item.a])}</b>.`;
+    const ex = document.createElement("span");
+    ex.className = "explain";
+    ex.textContent = getExplanation(current);
+    fb.appendChild(ex);
+  }
+
+  $("prev").disabled = current === 0;
+  $("next").textContent = current === questions.length-1 ? "Finish →" : "Next →";
+  updateStats();
+  updateGrid();
+}
+
+function choose(i){
+  if(answers[current] !== null) return;
+  answers[current] = i;
+  if(i === questions[current].a) score++;
+  render();
+}
+
+function next(){
+  if(current < questions.length-1){ current++; render(); }
+  else showResult();
+}
+function prev(){
+  if(current>0){ current--; render(); }
+}
+function updateStats(){
+  $("score").textContent = score;
+  $("answered").textContent = answers.filter(x=>x!==null).length;
+}
+function updateGrid(){
+  [...qgrid.children].forEach((b,i)=>{
+    b.className = "qbtn";
+    if(i===current) b.classList.add("current");
+    if(answers[i] !== null) b.classList.add(answers[i]===questions[i].a ? "correct" : "wrong");
+  });
+}
+function showResult(){
+  $("quiz").style.display = "none";
+  $("result").style.display = "block";
+  $("progress").style.width = "100%";
+  $("position").textContent = "Quiz complete";
+  $("percent").textContent = "100% complete";
+  $("finalScore").textContent = `${score} / ${questions.length}`;
+  const pct = Math.round(score/questions.length*100);
+  $("finalText").textContent = `You scored ${pct}%. ${pct>=80 ? "Excellent JAIIB readiness." : pct>=60 ? "Good foundation — revise the missed concepts." : "Keep practising and revisit the high-yield concepts."}`;
+}
+function restart(){
+  current=0; answers=Array(questions.length).fill(null); score=0; render();
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+function escapeHtml(s){
+  return s.replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]));
+}
+function getExplanation(i){
+  const explanations = {
+    0:"The cited Angus Maddison estimate gives India and China a combined 50.5% share of global GDP in 1000 AD.",
+    1:"India's cited global GDP share was 23% in 1600 AD.",
+    3:"The cited IMF figure for India's global GDP contribution in 2021 is 7.3%.",
+    5:"The World Bank classification used here has four groups: Low, Lower Middle, Upper Middle and High income.",
+    9:"Disguised unemployment exists when surplus workers can be removed without materially reducing output.",
+    14:"GNI equals GDP plus net primary income from the rest of the world.",
+    20:"Dadabhai Naoroji published the first Indian national-income estimates for 1867–68 in Poverty and Un-British Rule in India.",
+    29:"The 1857 Sepoy Mutiny was followed by the Crown taking direct control from 1858.",
+    37:"Wealth drain means a unilateral transfer of Indian wealth to Britain without sufficient economic return.",
+    39:"Philip Francis identified four broad streams of the drain in 1776.",
+    41:"Home Charges were official transfers from India to the UK during direct British rule.",
+    47:"Raj Krishna coined the term Hindu Rate of Growth in 1978.",
+    51:"The Sixth Five-Year Plan, 1980–85, is associated with breaking the Hindu Rate of Growth.",
+    52:"LPG stands for Liberalisation, Privatisation and Globalisation.",
+    57:"The Lehman Brothers collapse occurred on 15 September 2008.",
+    63:"WHO declared COVID-19 a pandemic on 11 March 2020.",
+    64:"The first COVID-19 case in India was recorded in Kerala on 30 January 2020.",
+    65:"India launched its COVID-19 vaccination programme on 16 January 2021.",
+    66:"Agriculture and allied activities were comparatively protected from lockdown restrictions.",
+    70:"Reverse migration increased rural employment demand under MGNREGS.",
+    80:"The source reports a 23.8% GDP contraction in Q1 of 2020–21.",
+    81:"The full-year GDP contraction in 2020–21 was 6.6%.",
+    85:"The provisional estimate for real GDP in 2021–22 was ₹147.36 lakh crore.",
+    86:"The provisional GDP growth estimate for 2021–22 was 8.7%.",
+    88:"Nominal GDP at current prices was ₹236.65 lakh crore in 2021–22.",
+    90:"The pre-COVID trend growth rate cited was 6.6% CAGR.",
+    91:"The cited RBI projection placed recovery of COVID-related losses around 2034–35.",
+    92:"Structural change means fundamental changes in critical economic components over time.",
+    94:"Agriculture's GDP share declined to 17.7% in 2019.",
+    95:"Services contributed 60.9% in 2020–21.",
+    98:"Services have become the dominant sector in India's long-term structural transformation.",
+    99:"Foreign direct investment is cited as an external influence on services-sector growth and dominance.",
+    107:"Sectoral structural transformation describes the shift from agriculture toward industry and services.",
+    114:"Agriculture remained resilient because its activities were comparatively spared from lockdown restrictions.",
+    116:"Trade, hotels, transport, communication and broadcasting-related services were classified as still suffering.",
+    118:"Coal and semiconductor chip shortages reduced momentum from late 2021."
+  };
+  return explanations[i] || "";
+}
+$("next").onclick = next;
+$("prev").onclick = prev;
+$("restart").onclick = restart;
+document.addEventListener("keydown", e => {
+  if(e.key==="ArrowRight") next();
+  if(e.key==="ArrowLeft") prev();
+});
+render();
+</script>
+</body>
+</html>
