@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JAIIB PREP — Indian Economy & Indian Financial System</title>
+<style>
+:root{--bg:#0b1117;--panel:#111923;--panel2:#0f1720;--border:#263444;--text:#e6edf3;--muted:#8b9aaa;--blue:#2f81f7;--blue2:#58a6ff;--green:#3fb950;--red:#f85149;--yellow:#d29922;--shadow:0 12px 35px rgba(0,0,0,.22)}
+body.light{--bg:#f5f7fa;--panel:#fff;--panel2:#f0f3f6;--border:#d0d7de;--text:#1f2328;--muted:#57606a;--blue:#0969da;--blue2:#218bff;--green:#1a7f37;--red:#cf222e;--yellow:#9a6700;--shadow:0 8px 24px rgba(31,35,40,.08)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.5}
+button{font:inherit}.topbar{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);height:62px;display:flex;align-items:center;justify-content:space-between;padding:0 18px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.3px}.brand-mark{width:34px;height:34px;border:1px solid var(--blue);display:grid;place-items:center;border-radius:8px;color:var(--blue2);font-weight:900}.badges{display:flex;gap:7px;flex-wrap:wrap;justify-content:center}.badge{font-size:12px;padding:4px 8px;border:1px solid var(--border);border-radius:999px;color:var(--muted);background:var(--panel)}
+.top-actions{display:flex;gap:8px;align-items:center}
+.reset-top{white-space:nowrap}
+@media(max-width:700px){
+  .reset-top{font-size:11px;padding:8px 9px}
+}.icon-btn,.account-btn{border:1px solid var(--border);background:var(--panel);color:var(--text);padding:7px 10px;border-radius:7px;cursor:pointer}.icon-btn:hover,.account-btn:hover{border-color:var(--blue)}
+.layout{max-width:1500px;margin:0 auto;display:grid;grid-template-columns:245px minmax(0,1fr);gap:18px;padding:18px}.sidebar{position:sticky;top:80px;height:calc(100vh - 100px);overflow:auto}.nav-card,.card{background:var(--panel);border:1px solid var(--border);border-radius:10px;box-shadow:var(--shadow)}.nav-card{padding:12px}.nav-title{font-size:12px;text-transform:uppercase;color:var(--muted);font-weight:800;margin:2px 8px 9px}.qnav{display:grid;grid-template-columns:repeat(5,1fr);gap:5px}.qnav button{border:1px solid var(--border);background:var(--panel2);color:var(--muted);border-radius:6px;min-height:32px;cursor:pointer;font-size:11px}.qnav button.current{border-color:var(--blue);color:var(--blue2);box-shadow:inset 0 0 0 1px var(--blue)}.qnav button.correct{background:color-mix(in srgb,var(--green) 18%,var(--panel2));color:var(--green)}.qnav button.wrong{background:color-mix(in srgb,var(--red) 18%,var(--panel2));color:var(--red)}.progress-wrap{margin:12px 3px}.progress{height:7px;background:var(--panel2);border:1px solid var(--border);border-radius:99px;overflow:hidden}.progress>i{display:block;height:100%;background:var(--blue);width:0;transition:width .25s}.main{min-width:0}.hero{padding:20px 22px;margin-bottom:15px}.hero h1{margin:0 0 5px;font-size:24px}.hero p{margin:0;color:var(--muted)}.section{margin-bottom:15px}.collapsible{width:100%;display:flex;justify-content:space-between;align-items:center;text-align:left;border:0;background:none;color:var(--text);padding:0;cursor:pointer}.section-title{font-size:17px;font-weight:800}.collapse-icon{color:var(--muted)}.content{padding-top:12px;color:var(--muted)}.content ul{margin:8px 0 0 20px;padding:0}.content li{margin:5px 0}.collapsed .content{display:none}
+.quiz-card{padding:20px 22px}.question-meta{display:flex;justify-content:space-between;gap:12px;align-items:center;color:var(--muted);font-size:13px}.topic-pill{border:1px solid var(--border);border-radius:999px;padding:4px 8px;color:var(--blue2)}.question{font-size:20px;font-weight:750;margin:16px 0 18px;line-height:1.35}.options{display:grid;gap:10px}.option{width:100%;text-align:left;border:1px solid var(--border);background:var(--panel2);color:var(--text);padding:13px 14px;border-radius:9px;cursor:pointer;display:flex;gap:11px;align-items:flex-start;transition:.15s}.option:hover:not(:disabled){border-color:var(--blue);transform:translateY(-1px)}.letter{min-width:27px;height:27px;border:1px solid var(--border);border-radius:6px;display:grid;place-items:center;color:var(--muted);font-weight:800}.option.correct{border-color:var(--green);background:color-mix(in srgb,var(--green) 14%,var(--panel2))}.option.wrong{border-color:var(--red);background:color-mix(in srgb,var(--red) 14%,var(--panel2))}.option.correct .letter{border-color:var(--green);color:var(--green)}.option.wrong .letter{border-color:var(--red);color:var(--red)}.option:disabled{cursor:default}.feedback{margin-top:15px;border-left:3px solid var(--blue);background:var(--panel2);padding:12px 14px;border-radius:6px}.feedback strong{display:block;margin-bottom:4px}.feedback.good{border-color:var(--green)}.feedback.bad{border-color:var(--red)}.actions{display:flex;justify-content:space-between;gap:10px;margin-top:18px}.btn{border:1px solid var(--border);background:var(--panel2);color:var(--text);padding:9px 13px;border-radius:7px;cursor:pointer}.btn.primary{background:var(--blue);border-color:var(--blue);color:#fff}.btn:disabled{opacity:.45;cursor:not-allowed}
+.analytics{margin-top:15px;padding:17px}.analytics-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.metric-row{display:grid;grid-template-columns:90px 1fr 42px;align-items:center;gap:8px;margin:9px 0;font-size:12px}.bar{height:10px;border:1px solid var(--border);border-radius:99px;overflow:hidden;background:var(--panel2)}.bar i{display:block;height:100%;width:0;transition:.25s}.bar.green i{background:var(--green)}.bar.red i{background:var(--red)}.analysis-box{border:1px solid var(--border);background:var(--panel2);border-radius:8px;padding:12px}.analysis-box h4{margin:0 0 6px}.analysis-box p{margin:0;color:var(--muted);font-size:13px}.topic-bars{display:grid;gap:8px;margin-top:10px}.topic-line{display:grid;grid-template-columns:180px 1fr 48px;gap:8px;align-items:center;font-size:11px}.topic-line .bar{height:8px}
+.result{display:none;margin-top:15px;padding:20px}.result.show{display:block}.result-head{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}.score-big{font-size:40px;font-weight:900;color:var(--blue2)}.result-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin:15px 0}.stat{padding:12px;border:1px solid var(--border);background:var(--panel2);border-radius:8px}.stat small{color:var(--muted);display:block}.stat b{font-size:20px}.account{padding:14px;margin-top:15px;display:flex;justify-content:space-between;align-items:center;gap:10px}.account small{color:var(--muted)}.toast{position:fixed;right:18px;bottom:18px;background:var(--panel);border:1px solid var(--border);padding:11px 14px;border-radius:8px;box-shadow:var(--shadow);display:none;z-index:100}.toast.show{display:block}
+@media(max-width:950px){.layout{grid-template-columns:1fr}.sidebar{position:static;height:auto}.qnav{grid-template-columns:repeat(10,1fr)}.analytics-grid{grid-template-columns:1fr}.badges{display:none}}
+@media(max-width:620px){.topbar{padding:0 10px}.brand span{display:none}.layout{padding:10px}.hero,.quiz-card,.result,.analytics{padding:15px}.question{font-size:18px}.result-grid{grid-template-columns:repeat(2,1fr)}.topic-line{grid-template-columns:115px 1fr 40px}.qnav{grid-template-columns:repeat(8,1fr)}}
+@media print{body{background:#fff!important;color:#111!important}.topbar,.sidebar,.hero,.section,.account,.actions,.quiz-card,.analytics,.toast{display:none!important}.result{display:block!important;border:0!important;box-shadow:none!important}.result *{color:#111!important;background:#fff!important;border-color:#bbb!important}}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><div class="brand-mark">J</div><span>JAIIB PREP</span></div>
+  <div class="badges">
+    <span class="badge" id="totalBadge">40 Questions</span>
+    <span class="badge" id="scoreBadge">Score: 0</span>
+    <span class="badge" id="answeredBadge">Answered: 0</span>
+  </div>
+  <div class="top-actions">
+    <button class="icon-btn" id="themeBtn" title="Toggle theme">☀︎ / ☾</button>
+    <button class="btn reset-top" id="freshBtn" title="Clear quiz progress and start fresh">↻ Start Fresh</button>
+    <button class="account-btn" id="loginBtn">Google Login</button>
+  </div>
+</header>
+
+<div class="layout">
+  <aside class="sidebar">
+    <div class="nav-card">
+      <div class="nav-title">Question Navigator</div>
+      <div class="qnav" id="qnav"></div>
+      <div class="progress-wrap"><div class="progress"><i id="progressFill"></i></div></div>
+      <div style="font-size:11px;color:var(--muted)" id="progressText">0 / 40 answered</div>
+    </div>
+  </aside>
+
+  <main class="main">
+    <section class="card hero">
+      <h1>Indian Economy & Indian Financial System</h1>
+      <p>High-yield JAIIB practice • self-contained MCQs • immediate feedback • live performance analytics</p>
+    </section>
+
+    <section class="card section" id="summarySection">
+      <div style="padding:17px 20px">
+        <button class="collapsible" data-target="summaryContent"><span class="section-title">Chapter Summary</span><span class="collapse-icon">⌃</span></button>
+        <div class="content" id="summaryContent"></div>
+      </div>
+    </section>
+
+    <section class="card section" id="conceptsSection">
+      <div style="padding:17px 20px">
+        <button class="collapsible" data-target="conceptsContent"><span class="section-title">Important Concepts</span><span class="collapse-icon">⌃</span></button>
+        <div class="content" id="conceptsContent"></div>
+      </div>
+    </section>
+
+    <section class="card quiz-card" id="quizCard">
+      <div class="question-meta">
+        <span id="qCounter">Question 1 of 40</span>
+        <span class="topic-pill" id="topicPill">Topic</span>
+      </div>
+      <div class="question" id="questionText"></div>
+      <div class="options" id="options"></div>
+      <div id="feedback"></div>
+      <div class="actions">
+        <button class="btn" id="prevBtn">← Previous</button>
+        <button class="btn primary" id="nextBtn">Next →</button>
+      </div>
+    </section>
+
+    <section class="card analytics">
+      <div class="section-title">Live Performance Analytics</div>
+      <div class="analytics-grid" style="margin-top:12px">
+        <div class="analysis-box">
+          <h4>Correct vs Wrong</h4>
+          <div class="metric-row"><span>Correct</span><div class="bar green"><i id="correctBar"></i></div><b id="correctCount">0</b></div>
+          <div class="metric-row"><span>Wrong</span><div class="bar red"><i id="wrongBar"></i></div><b id="wrongCount">0</b></div>
+          <div style="font-size:12px;color:var(--muted);margin-top:7px">Unattempted: <b id="unattemptedCount">40</b></div>
+        </div>
+        <div class="analysis-box">
+          <h4>Strength & Weakness</h4>
+          <div id="strengthText" style="font-size:13px;margin-bottom:6px">Strength: Insufficient data.</div>
+          <div id="weaknessText" style="font-size:13px">Weakness: Insufficient data.</div>
+          <div id="reviseText" style="font-size:12px;color:var(--muted);margin-top:8px">Revise first: —</div>
+        </div>
+      </div>
+      <div class="analysis-box" style="margin-top:14px">
+        <h4>Topic Accuracy</h4>
+        <div class="topic-bars" id="topicBars"></div>
+      </div>
+    </section>
+
+    <section class="card result" id="result">
+      <div class="result-head">
+        <div><div class="section-title">Final Result</div><div style="color:var(--muted);font-size:13px" id="resultTime"></div></div>
+        <div class="score-big" id="finalScore">0%</div>
+      </div>
+      <div class="result-grid">
+        <div class="stat"><small>Total</small><b id="rTotal">40</b></div>
+        <div class="stat"><small>Attempted</small><b id="rAttempted">0</b></div>
+        <div class="stat"><small>Correct</small><b id="rCorrect">0</b></div>
+        <div class="stat"><small>Incorrect</small><b id="rIncorrect">0</b></div>
+      </div>
+      <div class="analysis-box"><h4>Topic Performance</h4><div id="resultTopics" class="topic-bars"></div></div>
+      <div class="analysis-box" style="margin-top:12px"><h4>Revision Focus</h4><p id="resultAdvice">Complete more questions to generate a data-supported revision focus.</p></div>
+      <div class="actions" style="justify-content:flex-start">
+        <button class="btn primary" id="saveBtn">Save Results</button>
+        <button class="btn" id="pdfBtn">Download Results as PDF</button>
+        <button class="btn" id="restartBtn">Restart Quiz</button>
+      </div>
+    </section>
+
+    <section class="card account">
+      <div><b>Account</b><br><small>Google-only sign-in readiness. Practice mode works without backend integration.</small></div>
+      <button class="account-btn" id="accountState">Sign in with Google</button>
+    </section>
+  </main>
+</div>
+<div class="toast" id="toast"></div>
+
+<script>
+const QUESTIONS = [{"id": "IEFS-01", "topic": "Evolution & global GDP", "q": "According to the Angus Maddison database figures cited for 1000 AD, what share of global GDP was contributed jointly by India and China?", "options": ["35.0%", "42.5%", "50.5%", "60.0%"], "answer": 2, "ex": "The combined contribution of India and China to global GDP was 50.5% in 1000 AD, using the historical GDP estimates expressed in 1990 dollars at purchasing power parity. This shows that the two Asian economies together represented about half of the world's output at that time. The figure then rose to 52% by 1600 AD. Remember the sequence: 1000 AD → 50.5% combined; 1600 AD → 52% combined."}, {"id": "IEFS-02", "topic": "Evolution & global GDP", "q": "By 1600 AD, what was India's share of global GDP according to the Angus Maddison figures cited?", "options": ["16.1%", "23.0%", "24.4%", "29.0%"], "answer": 1, "ex": "India's share of global GDP was 23% in 1600 AD. China accounted for another 29%, so India and China together represented 52% of global GDP in that year. The important exam distinction is that 23% is India's individual share, while 52% is the combined India-China share. Remember: 1600 AD = India 23% + China 29% = 52%."}, {"id": "IEFS-03", "topic": "Evolution & global GDP", "q": "By 1820, India's share of world output had fallen to approximately what level in the figures cited?", "options": ["3.0%", "7.3%", "16.1%", "23.0%"], "answer": 2, "ex": "India's share of world output had fallen to 16.1% by 1820. The long-term decline becomes particularly important when viewed against the later colonial period: India's share was 23% in 1600 AD but had fallen to 3% by 1947. Remember the broad direction: 23% in 1600 → 16.1% in 1820 → 3% in 1947."}, {"id": "IEFS-04", "topic": "Basic characteristics", "q": "Which income category does the World Bank's per-capita-income classification place India in?", "options": ["Low income", "Lower-middle income", "Upper-middle income", "High income"], "answer": 1, "ex": "India is classified as a lower-middle-income economy in the income classification discussed. The classification is based on per-capita income rather than the absolute size of the economy. This explains an important distinction: India can be one of the world's largest economies in PPP terms while still having a relatively low per-capita income. Remember: total economic size and income per person measure different things."}, {"id": "IEFS-05", "topic": "Basic characteristics", "q": "Which of the following is a characteristic factor influencing the Indian economy?", "options": ["Very low population growth", "Excessive reliance on the primary sector", "Complete absence of unemployment", "Predominance of high per-capita income"], "answer": 1, "ex": "Excessive reliance on the primary sector is identified as one of the factors influencing the characteristics of the Indian economy. The primary sector includes activities such as agriculture and allied activities that depend directly on natural resources. Other factors highlighted include low per-capita real income, rapid population growth, unemployment or underemployment, the vicious circle of poverty and rising unemployment. Remember the pattern: low income + population pressure + employment problems + primary-sector dependence shape the economy."}, {"id": "IEFS-06", "topic": "Basic characteristics", "q": "What was India's per-capita income (PCI) cited for 2019 in the discussion of World Bank income classification?", "options": ["$996", "$1,891", "$3,895", "$7,300"], "answer": 1, "ex": "India's cited per-capita income for 2019 was $1,891. In the classification described, countries with per-capita income between $996 and $3,895 were placed in the lower-middle-income category, so $1,891 falls within that range. Remember the exam trap: India's large GDP or PPP ranking does not automatically mean high per-capita income."}, {"id": "IEFS-07", "topic": "Sectoral transformation", "q": "Which sector accounted for 53.1% of India's GDP in 1950?", "options": ["Agriculture", "Industry", "Services", "Construction"], "answer": 0, "ex": "Agriculture accounted for 53.1% of India's GDP in 1950, making it the dominant sector at the beginning of the post-independence development period. Industry accounted for 16.6% and services for 30.3%. The important structural-change idea is that agriculture's share subsequently declined while industry and services expanded. Remember the starting point: 1950 = Agriculture 53.1%, Industry 16.6%, Services 30.3%."}, {"id": "IEFS-08", "topic": "Sectoral transformation", "q": "In 1980–81, which sector was the largest contributor to India's GDP among agriculture, industry and services?", "options": ["Agriculture", "Industry", "Services", "Mining"], "answer": 2, "ex": "Services became the largest contributor in 1980–81, with a 38% share of GDP. Agriculture was close behind at 36.1%, while industry accounted for 25.9%. This marks an important structural shift because services overtook agriculture and later became the dominant part of the Indian economy. Remember the 1980–81 comparison: Services 38% > Agriculture 36.1% > Industry 25.9%."}, {"id": "IEFS-09", "topic": "Macro aggregates", "q": "In the macro-economic table for 2020–21, what was India's per-capita GDP at current prices?", "options": ["₹128,829", "₹145,680", "₹148,504", "₹180,288"], "answer": 1, "ex": "Per-capita GDP was ₹145,680 in 2020–21 in the macro-economic table. Per-capita GDP represents GDP measured on a per-person basis, so it helps relate the size of economic production to population. Do not confuse it with per-capita GNI or per-capita NNI, which are different national-income measures. Memory hook: in the 2020–21 table, per-capita GDP = ₹145,680."}, {"id": "IEFS-10", "topic": "Macro aggregates", "q": "In the same 2020–21 macro-economic table, what was per-capita GNI?", "options": ["₹128,829", "₹144,320", "₹145,680", "₹148,504"], "answer": 1, "ex": "Per-capita GNI was ₹144,320 in 2020–21. GNI differs from GDP because national income adjusts the domestic production concept for income flows with the rest of the world. In the table, per-capita GDP was ₹145,680 while per-capita GNI was ₹144,320. Remember the pairing rather than the isolated number: GDP ₹145,680; GNI ₹144,320."}, {"id": "IEFS-11", "topic": "Macro aggregates", "q": "What was the Gross Domestic Product (GDP) reported for 2020–21 in the macro-economic table?", "options": ["₹176,460.82 crore", "₹195,613.48 crore", "₹197,456.70 crore", "₹201,284.84 crore"], "answer": 2, "ex": "The macro-economic table reports GDP of ₹197,456.70 crore for 2020–21. The table is presented at current prices with 2011–12 as the base year for the statistical framework used in the chapter's data framework. The number should be remembered together with the year because several nearby years have different values. Memory hook: 2020–21 GDP in the table = ₹197,456.70 crore."}, {"id": "IEFS-12", "topic": "Macro aggregates", "q": "Which estimate status applies to the 2020–21 data in the macro-economic table?", "options": ["Final Estimates", "Third Revised Estimates", "First Revised Estimates", "Provisional Estimates"], "answer": 3, "ex": "The 2020–21 figures in the macro-economic table are provisional estimates. This is important because the statistical status of an estimate can change as more complete information becomes available. The notes distinguish 2017–18 as Third Revised Estimates, 2018–19 as Second Revised Estimates, 2019–20 as First Revised Estimates, and 2020–21 as Provisional Estimates. Remember the sequence: revised estimates for earlier years; provisional for 2020–21."}, {"id": "IEFS-13", "topic": "British period", "q": "What was the principal economic objective of the East India Company in the first phase described for British involvement in India?", "options": ["To establish Indian heavy industries", "To procure raw materials and find markets for finished goods", "To eliminate foreign trade", "To promote universal education"], "answer": 1, "ex": "During the first phase of British economic involvement, the East India Company's stated commercial objectives were to procure raw materials for its factories and find markets for its finished goods. This helps explain the later pattern of colonial economic activity: Indian resources were connected to British production and Indian markets to British goods. Remember the two-part commercial logic: raw materials in, finished goods out."}, {"id": "IEFS-14", "topic": "British period", "q": "Which event marked the beginning of the second phase of British economic control in India?", "options": ["The Revolt of 1857", "The Battle of Plassey", "The opening of the Suez Canal", "Indian independence in 1947"], "answer": 1, "ex": "The Battle of Plassey in 1757 marked the beginning of the second phase described for British control. The three broad phases are 1600–1757, 1757–1857 and 1858 onward. The Battle of Plassey is therefore the key date separating the first and second phases, while the Revolt of 1857 precedes the third phase under direct Crown control. Remember the timeline: 1600 → 1757 → 1857 → 1858 onward."}, {"id": "IEFS-15", "topic": "British period", "q": "Which three land-revenue systems are specifically associated with British taxation policies?", "options": ["Zamindari, Mahalwari and Ryotwari", "Permanent, Subsistence and Cooperative", "Jagirdari, Ijara and Khudkasht", "Mahalwari, Bhoodan and Zamindari"], "answer": 0, "ex": "The three land-revenue systems named are Zamindari, Mahalwari and Ryotwari. They formed part of the British land-tax framework and were associated with extracting land revenue from the Indian countryside. The exam memory point is the trio itself: Z-M-R — Zamindari, Mahalwari, Ryotwari. Keeping the three together helps avoid confusing them with unrelated land or agricultural arrangements."}, {"id": "IEFS-16", "topic": "British period", "q": "India's share of global income, according to the Angus Maddison figures cited, fell from 23% in 1600 to what level by 1947?", "options": ["16.1%", "7.3%", "3%", "Less than 1%"], "answer": 2, "ex": "India's share of global income declined from 23% in 1600 AD to only 3% by 1947. This dramatic fall illustrates the deterioration of India's relative position during the colonial period. The key memory contrast is simple: 23% at the beginning of the comparison, only 3% by independence. Remember: 1600 = 23%; 1947 = 3%."}, {"id": "IEFS-17", "topic": "British period", "q": "India's share of global trade, according to the figures cited, fell from 33% in 1600 to approximately what level in 1947?", "options": ["15%", "10%", "5%", "Less than 3%"], "answer": 3, "ex": "India's share of global trade fell from 33% in 1600 to less than 3% in 1947. The trade decline accompanies the fall in India's share of global income and is part of the description of colonial-era economic transformation. The strongest memory hook is the number sequence: global trade share 33% → <3%."}, {"id": "IEFS-18", "topic": "British period", "q": "Which term referred to the official transfers of money from India to the United Kingdom during direct British Crown control from 1858 to 1947?", "options": ["Home Charges", "Capital Charges", "Imperial Dividend", "Crown Revenue"], "answer": 0, "ex": "“Home Charges” referred to official transfers of money from India to the United Kingdom during the period of direct British Crown control from 1858 to 1947. The term is therefore linked specifically with the Crown period, not the entire earlier East India Company phase. Remember: Home Charges = money transferred from India to Britain during direct Crown rule."}, {"id": "IEFS-19", "topic": "Growth phases", "q": "Who coined the phrase 'Hindu Rate of Growth' in 1978 to describe India's slow economic growth?", "options": ["Angus Maddison", "Raj Krishna", "D. R. Gadgil", "Manmohan Singh"], "answer": 1, "ex": "Professor Raj Krishna coined the phrase “Hindu Rate of Growth” in 1978 to describe India's prolonged period of relatively slow economic growth. The phrase is associated with the planned-economy decades when annual growth was around 3.5%. Remember the association as a pair: Raj Krishna → 1978 → Hindu Rate of Growth."}, {"id": "IEFS-20", "topic": "Growth phases", "q": "Approximately what annual growth rate did India's economy record during the 1950s to 1980s period described as the 'Hindu Rate of Growth'?", "options": ["1.3%", "2.0%", "3.5%", "5.5%"], "answer": 2, "ex": "India's annual growth rate during the period described as the “Hindu Rate of Growth” was around 3.5%, while per-capita income growth averaged about 1.3%. The difference matters: overall output could grow by 3.5% while growth per person was much lower because population was also increasing. Memory hook: 3.5% = economy; 1.3% = per-capita income."}, {"id": "IEFS-21", "topic": "Growth phases", "q": "Which Five-Year Plan period is associated with India breaking the 'Hindu Rate of Growth' pattern?", "options": ["First Plan, 1951–1956", "Third Plan, 1961–1966", "Sixth Plan, 1980–1985", "Eighth Plan, 1992–1997"], "answer": 2, "ex": "The Sixth Five-Year Plan, covering 1980–1985, is identified with breaking the earlier “Hindu Rate of Growth” pattern. Higher government spending provided fiscal stimulus, while liberalised import policies increased imports of capital goods and raw materials. Remember the chronology: slow-growth decades → Sixth Plan (1980–85) → stronger economic buoyancy."}, {"id": "IEFS-22", "topic": "1991 reforms", "q": "What does LPG stand for in the context of India's post-1991 economic reforms?", "options": ["Liberalisation, Privatisation, Globalisation", "Liquidity, Planning, Growth", "Liberalisation, Public investment, Governance", "Labour, Production, Globalisation"], "answer": 0, "ex": "LPG stands for Liberalisation, Privatisation and Globalisation. These reforms were adopted after the 1991 economic crisis and are associated with the post-reform phase of India's economy. Liberalisation reduced restrictions, privatisation increased the role of private enterprise, and globalisation integrated the economy more closely with the world economy. Remember the three letters: L-P-G."}, {"id": "IEFS-23", "topic": "1991 reforms", "q": "What was India's GDP growth rate during the Eighth Five-Year Plan (1992–1997)?", "options": ["5.3%", "6.7%", "7.6%", "8.6%"], "answer": 1, "ex": "GDP growth during the Eighth Five-Year Plan, 1992–1997, was 6.7%. This period followed the 1991 reforms and belongs to the post-reform phase. The nearby plan figures can be confused in MCQs: Eighth Plan = 6.7%, Ninth Plan = 5.3%, Tenth Plan = 7.6%. Remember the sequence: 6.7 → 5.3 → 7.6."}, {"id": "IEFS-24", "topic": "1991 reforms", "q": "What was India's GDP growth rate during the Tenth Five-Year Plan (2002–2007)?", "options": ["5.3%", "6.7%", "7.6%", "8.6%"], "answer": 2, "ex": "GDP growth during the Tenth Five-Year Plan, 2002–2007, was 7.6%. The cited figures are 6.7% for the Eighth Plan and 5.3% for the Ninth Plan, so 7.6% is specifically associated with the Tenth Plan. Memory hook: Eighth 6.7 → Ninth 5.3 → Tenth 7.6."}, {"id": "IEFS-25", "topic": "Global financial crisis", "q": "Following the Lehman collapse in September 2008, the Indian government introduced fiscal stimulus packages totalling approximately what amount?", "options": ["₹0.86 lakh crore", "₹1.20 lakh crore", "₹1.86 lakh crore", "₹5.60 lakh crore"], "answer": 2, "ex": "After the Lehman collapse in September 2008, the government introduced three fiscal stimulus packages totalling ₹1.86 lakh crore, described as about 3.5% of GDP. Fiscal stimulus means government action intended to support economic activity, particularly when private demand is weakening. Remember the 2008 fiscal number: ₹1.86 lakh crore."}, {"id": "IEFS-26", "topic": "Global financial crisis", "q": "What amount of liquidity did the RBI inject after the September 2008 global financial shock,?", "options": ["₹1.86 lakh crore", "₹3.5 lakh crore", "₹5.6 lakh crore", "₹9 lakh crore"], "answer": 2, "ex": "The RBI injected ₹5.6 lakh crore of liquidity after the 2008 global financial shock, described as roughly 9% of GDP. The policy response therefore had two major sides: government fiscal stimulus of ₹1.86 lakh crore and RBI monetary/liquidity support of ₹5.6 lakh crore. Remember the distinction: ₹1.86 lakh crore = fiscal stimulus; ₹5.6 lakh crore = RBI liquidity injection."}, {"id": "IEFS-27", "topic": "Pre-COVID growth", "q": "What was India's average annual GDP growth rate between 2008–09 and 2019–20 at 2011–12 base-year prices?", "options": ["4.0%", "5.3%", "6.5%", "8.7%"], "answer": 2, "ex": "India's average annual GDP growth between 2008–09 and 2019–20 was cited as 6.5% at 2011–12 base-year prices. This period includes the recovery after the global financial crisis but ends before the full COVID-19 shock. The figure is useful as a pre-pandemic benchmark. Remember: 2008–09 to 2019–20 average growth = 6.5%."}, {"id": "IEFS-28", "topic": "COVID-19", "q": "On what date did the World Health Organization declare COVID-19 a pandemic?", "options": ["30 January 2020", "11 March 2020", "16 September 2020", "16 January 2021"], "answer": 1, "ex": "The World Health Organization declared COVID-19 a pandemic on 11 March 2020. The also gives 30 January 2020 as the date when the first COVID-19 case was recorded in Kerala. Keep the timeline distinct: first Indian case → 30 January 2020; WHO pandemic declaration → 11 March 2020."}, {"id": "IEFS-29", "topic": "COVID-19", "q": "When was the first COVID-19 case recorded in Kerala?", "options": ["30 January 2020", "11 March 2020", "16 September 2020", "16 January 2021"], "answer": 0, "ex": "The first COVID-19 case in India was recorded in Kerala on 30 January 2020. This date comes before the WHO's pandemic declaration on 11 March 2020. Remember the sequence: India first case = 30 January; pandemic declaration = 11 March."}, {"id": "IEFS-30", "topic": "COVID-19", "q": "On which date did India launch its COVID-19 vaccination programme?", "options": ["30 January 2020", "11 March 2020", "16 September 2020", "16 January 2021"], "answer": 3, "ex": "India launched its COVID-19 vaccination programme on 16 January 2021. This came after the first COVID-19 case in India on 30 January 2020 and after the WHO pandemic declaration on 11 March 2020. Memory timeline: 30 January 2020 → first Indian case; 11 March 2020 → pandemic declared; 16 January 2021 → vaccination programme launched."}, {"id": "IEFS-31", "topic": "COVID-19 sectoral impact", "q": "Which sector was relatively resilient during India's COVID-19 lockdown because agriculture and allied activities were largely spared from lockdown restrictions?", "options": ["Agriculture", "Manufacturing", "Construction", "Trade and hotels"], "answer": 0, "ex": "Agriculture remained relatively resilient during the pandemic because agriculture and allied activities were largely spared from the lockdown restrictions that severely affected many contact-intensive activities. This is why agriculture behaved differently from manufacturing, construction and several services. Remember the contrast: lockdown restricted movement and contact, but essential agricultural activity continued."}, {"id": "IEFS-32", "topic": "COVID-19 sectoral impact", "q": "Which group of activities was particularly affected because it is contact-intensive and includes many non-essential services?", "options": ["Agriculture and fishing", "Trade, hotels, transport and related services", "Mining and quarrying only", "Public administration only"], "answer": 1, "ex": "Contact-intensive services were among the hardest-hit areas because they depend on physical interaction and movement. Trade, hotels, transport, communication and broadcasting-related activities were particularly affected, with profitability and activity falling sharply. The key memory link is “contact = vulnerability”: the more an activity depended on physical contact and mobility, the greater the immediate lockdown shock."}, {"id": "IEFS-33", "topic": "COVID-19 labour market", "q": "What happened to India's labour market during the first wave of the COVID-19 pandemic?", "options": ["Unemployment reached an all-time high and labour-force participation fell", "Employment rose sharply and participation increased", "Only agricultural employment declined", "Urban employment remained completely unaffected"], "answer": 0, "ex": "The first COVID-19 wave caused a severe labour-market shock in India: unemployment reached an all-time high in the period described, while labour-force participation fell sharply. Lockdowns reduced the ability of many businesses to operate and disrupted employment, especially in urban areas. Remember the direction of both indicators: unemployment ↑, labour-force participation ↓."}, {"id": "IEFS-34", "topic": "COVID-19 labour market", "q": "Reverse migration from urban to rural areas during the first COVID-19 wave increased demand for which employment programme?", "options": ["PM-KISAN", "MGNREGS", "Make in India", "PMJDY"], "answer": 1, "ex": "Reverse migration from urban to rural areas increased demand for work under MGNREGS, the Mahatma Gandhi National Rural Employment Guarantee Scheme. As workers returned to rural areas during the first wave, rural employment support became especially important. Memory hook: reverse migration → rural labour supply ↑ → MGNREGS demand ↑."}, {"id": "IEFS-35", "topic": "Economic recovery", "q": "By how much did India's GDP contract in the first quarter of 2020–21?", "options": ["6.6%", "8.7%", "23.8%", "-4.8%"], "answer": 2, "ex": "GDP contracted by as much as 23.8% in Q1 of 2020–21 during the first COVID-19 wave. This was an exceptionally sharp quarterly contraction caused by the disruption of economic activity during the stringent lockdown. The full-year contraction was less severe at 6.6%, because economic activity began recovering later in the year. Remember the contrast: Q1 = -23.8%; full year = -6.6%."}, {"id": "IEFS-36", "topic": "Economic recovery", "q": "What was India's estimated GDP growth rate for 2021–22 at constant 2011–12 prices?", "options": ["6.6%", "8.7%", "9.8%", "20.1%"], "answer": 1, "ex": "GDP growth for 2021–22 was estimated at 8.7% at constant 2011–12 prices, following the 6.6% contraction in 2020–21. This reflects the strong rebound after the pandemic-induced contraction, supported by a low base. Memory hook: 2020–21 = -6.6%; 2021–22 = +8.7% — contraction followed by recovery."}, {"id": "IEFS-37", "topic": "Structural change", "q": "Which sector had the largest share of India's economy in 2020–21?", "options": ["Primary sector at 20.1%", "Secondary sector at 19.8%", "Services sector at 60.9%", "Agriculture alone at 60.9%"], "answer": 2, "ex": "Services accounted for 60.9% of the Indian economy in 2020–21, making it the largest sector by a wide margin. The secondary sector contributed 19.8% and the primary sector 20.1%. This illustrates India's service-led economic structure. Remember the three shares together: Services 60.9%, Primary 20.1%, Secondary 19.8%."}, {"id": "IEFS-38", "topic": "Structural change", "q": "What long-term structural change is described for India's economy?", "options": ["Primary sector share rises continuously while services decline", "Primary sector contribution declines while secondary and tertiary sectors increase", "Industry permanently replaces services as the dominant sector", "All three sectors maintain identical shares"], "answer": 1, "ex": "Structural change means a fundamental shift in the composition of an economy over time. In India, the primary sector's contribution has generally declined as secondary and tertiary activities have increased, with services becoming the dominant sector. The long-run pattern is therefore primary ↓, while industry and services ↑; eventually services can surpass the secondary sector. Remember: development changes the sectoral composition, not merely the total size of GDP."}, {"id": "IEFS-39", "topic": "Structural change", "q": "From 1990 to 2019, agriculture's share of India's GDP declined from 26.9% to approximately what level?", "options": ["21.6%", "20.1%", "17.7%", "15.0%"], "answer": 2, "ex": "Agriculture's share of GDP declined from 26.9% in 1990 to 21.6% in 2000, 17.8% in 2010 and 17.7% in 2019. The important point is the sustained downward trend rather than a single-year movement. The figures illustrate India's increasing service-led growth. Memory sequence: 26.9 → 21.6 → 17.8 → 17.7."}, {"id": "IEFS-40", "topic": "Structural change", "q": "Which external factor is specifically identified as influencing the growth and dominance of India's services sector?", "options": ["Foreign direct investment", "Monsoon rainfall alone", "Gold imports alone", "Population decline"], "answer": 0, "ex": "Foreign direct investment is identified as one external factor influencing the growth and dominance of India's services sector. FDI can bring capital and connect domestic businesses with international economic activity, which can affect the expansion of service industries. The broader structural-change point is that India's services growth is influenced not only by domestic factors but also by external economic forces. Remember: services + external integration → FDI matters."}];
+const SUMMARY = "India's economy has moved from a historically large share of world output to a modern lower-middle-income economy whose structure is dominated by services. Angus Maddison's estimates cited in the material place India's global income share at 23% in 1600, falling to 3% by 1947, while India's global trade share fell from 33% to less than 3% over the same period. Under British rule, economic activity was shaped by extraction of raw materials, land-revenue systems, commercialisation of agriculture and deindustrialisation. After independence, the economy experienced relatively slow growth of about 3.5% during the early planned-economy decades, followed by stronger growth in the 1980s and major reforms after the 1991 crisis through Liberalisation, Privatisation and Globalisation. The 2008 global financial crisis was met with fiscal and monetary stimulus. Before COVID-19, average growth for 2008–09 to 2019–20 was cited at 6.5%, but structural bottlenecks had emerged. The pandemic caused a sharp contraction, especially in contact-intensive services, construction and parts of industry, while agriculture was relatively resilient. Recovery was uneven, with GDP contracting 23.8% in Q1 2020–21 and the full-year contraction reported at 6.6%, followed by estimated growth of 8.7% in 2021–22. Long-term structural change is characterised by a declining primary-sector share and a dominant services sector; in 2020–21, services accounted for 60.9%, secondary activities 19.8% and primary activities 20.1%.";
+const CONCEPTS = ["India was classified in the source as a lower-middle-income economy.", "1000 AD: India + China = 50.5% of global GDP; 1600 AD: India = 23%.", "India's global income share: 23% in 1600 → 3% in 1947; global trade share: 33% → less than 3%.", "British phases: 1600–1757; 1757–1857; 1858 onward under the British Crown.", "Land-revenue systems: Zamindari, Mahalwari and Ryotwari.", "Home Charges = official transfers of money from India to the UK during direct Crown control.", "Hindu Rate of Growth: phrase coined by Raj Krishna in 1978; growth around 3.5% in the cited period.", "Sixth Five-Year Plan (1980–85): period identified with breaking the earlier low-growth pattern.", "LPG reforms after 1991 = Liberalisation, Privatisation, Globalisation.", "2008 response: fiscal stimulus ₹1.86 lakh crore; RBI liquidity injection ₹5.6 lakh crore.", "WHO pandemic declaration: 11 March 2020; India's vaccination programme: 16 January 2021.", "COVID Q1 2020–21 GDP contraction: 23.8%; full-year 2020–21 contraction: 6.6%.", "2021–22 estimated GDP growth: 8.7% at constant 2011–12 prices.", "2020–21 sector shares: services 60.9%, secondary 19.8%, primary 20.1%.", "Structural change: declining primary-sector share with increasing roles of secondary and tertiary sectors."];
+const STORAGE_KEY = "jaiib_iefs_v1_state";
+const THEME_KEY = "jaiib_theme";
+
+let order = QUESTIONS.map((_,i)=>i);
+let current = 0;
+let state = QUESTIONS.map(q=>({selected:null,isCorrect:null,attemptedAt:null}));
+
+function shuffle(a){const x=[...a];for(let i=x.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[x[i],x[j]]=[x[j],x[i]]}return x}
+function $(id){return document.getElementById(id)}
+function toast(msg){$("toast").textContent=msg;$("toast").classList.add("show");setTimeout(()=>$("toast").classList.remove("show"),2200)}
+function saveLocal(){localStorage.setItem(STORAGE_KEY,JSON.stringify({order,state,current,savedAt:new Date().toISOString()}))}
+function loadLocal(){try{const x=JSON.parse(localStorage.getItem(STORAGE_KEY));if(x&&Array.isArray(x.order)&&Array.isArray(x.state)&&x.state.length===QUESTIONS.length){order=x.order;state=x.state;current=Math.min(x.current||0,QUESTIONS.length-1)}}catch(e){}}
+function setTheme(t){document.body.classList.toggle("light",t==="light");localStorage.setItem(THEME_KEY,t)}
+function initTheme(){setTheme(localStorage.getItem(THEME_KEY)||"dark")}
+function currentQ(){return QUESTIONS[order[current]]}
+function answeredCount(){return state.filter(x=>x.selected!==null).length}
+function correctCount(){return state.filter(x=>x.isCorrect===true).length}
+function wrongCount(){return state.filter(x=>x.isCorrect===false).length}
+
+function renderSummary(){
+  $("summaryContent").innerHTML="<p>"+SUMMARY+"</p>";
+  $("conceptsContent").innerHTML="<ul>"+CONCEPTS.map(x=>"<li>"+x+"</li>").join("")+"</ul>";
+  document.querySelectorAll(".collapsible").forEach(b=>b.addEventListener("click",()=>{
+    const el=$(b.dataset.target), sec=b.closest(".section");
+    sec.classList.toggle("collapsed");
+    b.querySelector(".collapse-icon").textContent=sec.classList.contains("collapsed")?"⌄":"⌃";
+  }));
+}
+function renderNav(){
+  const nav=$("qnav");nav.innerHTML="";
+  order.forEach((idx,i)=>{
+    const b=document.createElement("button");const s=state[idx];
+    b.textContent=i+1;b.className=i===current?"current":(s.isCorrect===true?"correct":s.isCorrect===false?"wrong":"");
+    b.onclick=()=>{current=i;render()};
+    nav.appendChild(b);
+  });
+}
+function renderQuestion(){
+  const q=currentQ(), s=state[order[current]];
+  $("qCounter").textContent=`Question ${current+1} of ${QUESTIONS.length}`;
+  $("topicPill").textContent=q.topic;
+  $("questionText").textContent=q.q;
+  const letters=["A","B","C","D"], opts=$("options");opts.innerHTML="";
+  q.options.forEach((opt,i)=>{
+    const b=document.createElement("button");b.className="option";
+    if(s.selected!==null){if(i===q.answer)b.classList.add("correct");if(i===s.selected&&i!==q.answer)b.classList.add("wrong");b.disabled=true}
+    b.innerHTML=`<span class="letter">${letters[i]}</span><span>${opt}</span>`;
+    b.onclick=()=>selectAnswer(i);opts.appendChild(b);
+  });
+  const fb=$("feedback");fb.innerHTML="";
+  if(s.selected!==null){
+    fb.className="feedback "+(s.isCorrect?"good":"bad");
+    fb.innerHTML=`<strong>${s.isCorrect?"✓ Correct":"✕ Incorrect"} — Correct answer: ${letters[q.answer]}. ${q.options[q.answer]}</strong><div>${q.ex}</div>`;
+  } else fb.className="";
+  $("prevBtn").disabled=current===0;
+  $("nextBtn").textContent=current===QUESTIONS.length-1?"Finish →":"Next →";
+}
+function selectAnswer(i){
+  const idx=order[current], q=QUESTIONS[idx];
+  if(state[idx].selected!==null)return;
+  state[idx]={selected:i,isCorrect:i===q.answer,attemptedAt:new Date().toISOString()};
+  saveLocal();render();
+}
+function renderAnalytics(){
+  const c=correctCount(),w=wrongCount(),a=c+w,total=QUESTIONS.length;
+  $("correctCount").textContent=c;$("wrongCount").textContent=w;$("unattemptedCount").textContent=total-a;
+  $("correctBar").style.width=(a?c/a*100:0)+"%";$("wrongBar").style.width=(a?w/a*100:0)+"%";
+  $("scoreBadge").textContent=`Score: ${c}`;
+  $("answeredBadge").textContent=`Answered: ${a}`;
+  $("progressText").textContent=`${a} / ${total} answered`;
+  $("progressFill").style.width=(a/total*100)+"%";
+  const by={};QUESTIONS.forEach((q,i)=>{by[q.topic]??={a:0,c:0};if(state[i].selected!==null){by[q.topic].a++;if(state[i].isCorrect)by[q.topic].c++}});
+  const enough=Object.entries(by).filter(([,v])=>v.a>=2);
+  let strengths=enough.filter(([,v])=>v.c/v.a>=.75).sort((a,b)=>b[1].c/b[1].a-a[1].c/a[1].a);
+  let weaknesses=enough.filter(([,v])=>v.c/v.a<=.5).sort((a,b)=>a[1].c/a[1].a-b[1].c/b[1].a);
+  $("strengthText").textContent="Strength: "+(strengths.length?`${strengths[0][0]} (${Math.round(strengths[0][1].c/strengths[0][1].a*100)}%)`:"Insufficient data.");
+  $("weaknessText").textContent="Weakness: "+(weaknesses.length?`${weaknesses[0][0]} (${Math.round(weaknesses[0][1].c/weaknesses[0][1].a*100)}%)`:"Insufficient data.");
+  $("reviseText").textContent="Revise first: "+(weaknesses.length?weaknesses[0][0]:"—");
+  $("topicBars").innerHTML=Object.entries(by).map(([t,v])=>{const pct=v.a?Math.round(v.c/v.a*100):0;return `<div class="topic-line"><span>${t}</span><div class="bar"><i style="width:${pct}%;background:${pct>=75?'var(--green)':pct<=50&&v.a>=2?'var(--red)':'var(--blue)'}"></i></div><b>${v.a?pct+"%":"—"}</b></div>`}).join("");
+}
+function showResult(){
+  const a=answeredCount(),c=correctCount(),w=wrongCount(),pct=Math.round(c/QUESTIONS.length*100);
+  $("finalScore").textContent=pct+"%";$("rTotal").textContent=QUESTIONS.length;$("rAttempted").textContent=a;$("rCorrect").textContent=c;$("rIncorrect").textContent=w;
+  $("resultTime").textContent=new Date().toLocaleString();
+  const by={};QUESTIONS.forEach((q,i)=>{by[q.topic]??={a:0,c:0};if(state[i].selected!==null){by[q.topic].a++;if(state[i].isCorrect)by[q.topic].c}});
+  $("resultTopics").innerHTML=Object.entries(by).map(([t,v])=>{const pct=v.a?Math.round(v.c/v.a*100):0;return `<div class="topic-line"><span>${t}</span><div class="bar"><i style="width:${pct}%;background:${pct>=75?'var(--green)':pct<=50&&v.a>=2?'var(--red)':'var(--blue)'}"></i></div><b>${v.a?pct+"%":"—"}</b></div>`}).join("");
+  const weak=Object.entries(by).filter(([,v])=>v.a>=2).sort((a,b)=>a[1].c/a[1].a-b[1].c/b[1].a)[0];
+  $("resultAdvice").textContent=weak?`Revise ${weak[0]} first; observed accuracy is ${Math.round(weak[1].c/weak[1].a*100)}% across ${weak[1].a} attempted questions.`:"Insufficient data for a topic-specific revision recommendation.";
+  $("result").classList.add("show");$("result").scrollIntoView({behavior:"smooth",block:"start"});
+}
+function render(){
+  renderNav();renderQuestion();renderAnalytics();
+  $("totalBadge").textContent=`${QUESTIONS.length} Questions`;
+}
+function startFresh(){
+  const ok=confirm("Start a fresh attempt? Your current quiz progress will be cleared and the questions will be loaded in a new order.");
+  if(!ok)return;
+  localStorage.removeItem(STORAGE_KEY);
+  localStorage.removeItem("jaiib_last_result");
+  state=QUESTIONS.map(q=>({selected:null,isCorrect:null,attemptedAt:null}));
+  order=shuffle(QUESTIONS.map((_,i)=>i));
+  current=0;
+  $("result").classList.remove("show");
+  render();
+  window.scrollTo({top:0,behavior:"smooth"});
+  toast("Fresh attempt started.");
+}
+function buildResult(){
+  const by={};QUESTIONS.forEach((q,i)=>{by[q.topic]??={attempted:0,correct:0};if(state[i].selected!==null){by[q.topic].attempted++;if(state[i].isCorrect)by[q.topic].correct++}});
+  return {quizId:"JAIIB-IEFS-OVERVIEW-01",quizTitle:"Indian Economy & Indian Financial System",completedAt:new Date().toISOString(),totalQuestions:QUESTIONS.length,attempted:answeredCount(),correct:correctCount(),incorrect:wrongCount(),percentage:Math.round(correctCount()/QUESTIONS.length*100),topicPerformance:by,strengths:[],weaknesses:[],responses:state};
+}
+$("prevBtn").onclick=()=>{if(current>0){current--;saveLocal();render()}};
+$("nextBtn").onclick=()=>{if(current<QUESTIONS.length-1){current++;saveLocal();render()}else showResult()};
+$("themeBtn").onclick=()=>setTheme(document.body.classList.contains("light")?"dark":"light");
+$("freshBtn").onclick=startFresh;
+$("loginBtn").onclick=()=>toast("Google sign-in is a Firebase-ready placeholder. Practice mode is active.");
+$("accountState").onclick=()=>toast("Google sign-in placeholder — no backend is required for practice.");
+$("saveBtn").onclick=()=>{const result=buildResult();localStorage.setItem("jaiib_last_result",JSON.stringify(result));const blob=new Blob([JSON.stringify(result,null,2)],{type:"application/json"});const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="JAIIB_IEFS_Result.json";a.click();URL.revokeObjectURL(a.href);toast("Result saved locally and exported as JSON.")};
+$("pdfBtn").onclick=()=>{showResult();setTimeout(()=>window.print(),250)};
+$("restartBtn").onclick=startFresh;
+
+loadLocal();initTheme();renderSummary();render();
+</script>
+</body>
+</html>
